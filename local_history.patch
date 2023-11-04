@@ -1,0 +1,37 @@
+Index: app/src/main/java/com/example/andrewschat/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/andrewschat/MainActivity.java b/app/src/main/java/com/example/andrewschat/MainActivity.java
+--- a/app/src/main/java/com/example/andrewschat/MainActivity.java	
++++ b/app/src/main/java/com/example/andrewschat/MainActivity.java	(date 1681665876378)
+@@ -100,7 +100,7 @@
+     public void run() {
+         try {
+             soc = new Socket();
+-            InetSocketAddress inetAddress=new InetSocketAddress("eeeeeeeeerrrrtrrr.ddns.net",5032);
++            InetSocketAddress inetAddress=new InetSocketAddress("0.tcp.eu.ngrok.io",14289);
+             soc.connect(inetAddress,25000);
+             if(soc.isConnected()){
+                 System.out.println("1");
+@@ -130,8 +130,8 @@
+             size=inputmes.read(buf_out);
+                 message = (new String(buf_out, 0, size));
+                 if (message .equals("YOUAReAPPLE")){
+-                   flagchat=true;
+-                    line=findViewById(R.id.linear);
++                   Intent intent = new Intent(getApplicationContext(),ChatActivity.class);
++                   startActivity(intent);
+                 }
+                 if(flagchat && flaglin){
+                     runOnUiThread(new Runnable() {
+@@ -155,7 +155,7 @@
+         sc.fullScroll(View.FOCUS_DOWN);
+     }
+ 
+-    }
++}
+ 
+ 
+ 
